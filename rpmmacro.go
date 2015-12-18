@@ -28,3 +28,10 @@ func Expand(macro string) string {
 	defer C.free(unsafe.Pointer(cExpansion))
 	return C.GoString(cExpansion)
 }
+
+// ExpandNumeric (rpmExpandNumeric) returns macro expansion as a numeric value.
+func ExpandNumeric(macro string) int {
+	cMacro := C.CString(macro)
+	defer C.free(unsafe.Pointer(cMacro))
+	return int(C.rpmExpandNumeric(cMacro))
+}
