@@ -18,6 +18,11 @@ import (
 )
 
 
+// EVR contains RPM package Epoch, Version and Release
+type EVR struct {
+	Epoch, Version, Release string
+}
+
 // ReadConfigFiles (rpmReadConfigFiles in RPM) reads macro configuration
 // file(s) for a target.
 // It returns 0 on success, -1 on error
@@ -58,6 +63,19 @@ func ReadPackageFile(ts *RpmTs, fd *FD_t, hdr *Header) (RpmRc, error) {
 	return status, nil
 }
 
+
+// LabelCompare compares two packages EVR's.
+// Returns 1 if first package is "newer", 0 if equal, -1 if second package is newer.
+func LabelCompare(evr1, evr2 *EVR) int {
+	rc := Vercmp(evr1.Epoch, evr2.Epoch)
+	if rc == 0 {
+		rc = Vercmp(evr1.Version, evr2.Version)
+		if rc == 0 {
+			rc = Vercmp(evr1.Release, evr2.Release)
+		}
+	}
+	return rc
+}
 
 // Vercmp (rpmvercmp in RPM) does segmented string comparison for version or
 // release strings.
