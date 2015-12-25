@@ -18,22 +18,22 @@ type RpmBuildFlag uint32
 
 const (
 	RPMBUILD_NONE          = RpmBuildFlag(C.RPMBUILD_NONE)
-	RPMBUILD_PREP          = RpmBuildFlag(C.RPMBUILD_PREP) // execute %prep
-	RPMBUILD_BUILD         = RpmBuildFlag(C.RPMBUILD_NONE) // execute %build
-	RPMBUILD_INSTALL       = RpmBuildFlag(C.RPMBUILD_NONE) // execute install
-	RPMBUILD_CHECK         = RpmBuildFlag(C.RPMBUILD_NONE) // execute %check
-	RPMBUILD_CLEAN         = RpmBuildFlag(C.RPMBUILD_NONE) // execute %clean
-	RPMBUILD_FILECHECK     = RpmBuildFlag(C.RPMBUILD_NONE) // check %files manifest
-	RPMBUILD_PACKAGESOURCE = RpmBuildFlag(C.RPMBUILD_NONE) // create source package
-	RPMBUILD_PACKAGEBINARY = RpmBuildFlag(C.RPMBUILD_NONE) // create binary package(s)
-	RPMBUILD_RMSOURCE      = RpmBuildFlag(C.RPMBUILD_NONE) // remove source(s) and patch(s)
-	RPMBUILD_RMBUILD       = RpmBuildFlag(C.RPMBUILD_NONE) // remove build sub-tree
-	RPMBUILD_STRINGBUF     = RpmBuildFlag(C.RPMBUILD_NONE) // internal use only
-	RPMBUILD_RMSPEC        = RpmBuildFlag(C.RPMBUILD_NONE) // remove spec file
-	RPMBUILD_FILE_FILE     = RpmBuildFlag(C.RPMBUILD_NONE) // rpmSpecPkgGetSection: %files -f
-	RPMBUILD_FILE_LIST     = RpmBuildFlag(C.RPMBUILD_NONE) // rpmSpecPkgGetSection: %files
-	RPMBUILD_POLICY        = RpmBuildFlag(C.RPMBUILD_NONE) // rpmSpecPkgGetSection: %policy
-	RPMBUILD_NOBUILD       = RpmBuildFlag(C.RPMBUILD_NONE) // don't execute or package
+	RPMBUILD_PREP          = RpmBuildFlag(C.RPMBUILD_PREP)          // execute %prep
+	RPMBUILD_BUILD         = RpmBuildFlag(C.RPMBUILD_BUILD)         // execute %build
+	RPMBUILD_INSTALL       = RpmBuildFlag(C.RPMBUILD_INSTALL)       // execute install
+	RPMBUILD_CHECK         = RpmBuildFlag(C.RRPMBUILD_CHECK)        // execute %check
+	RPMBUILD_CLEAN         = RpmBuildFlag(C.RPMBUILD_CLEAN)         // execute %clean
+	RPMBUILD_FILECHECK     = RpmBuildFlag(C.RPMBUILD_FILECHECK)     // check %files manifest
+	RPMBUILD_PACKAGESOURCE = RpmBuildFlag(C.RPMBUILD_PACKAGESOURCE) // create source package
+	RPMBUILD_PACKAGEBINARY = RpmBuildFlag(C.RPMBUILD_PACKAGEBINARY) // create binary package(s)
+	RPMBUILD_RMSOURCE      = RpmBuildFlag(C.RPMBUILD_RMSOURCE)      // remove source(s) and patch(s)
+	RPMBUILD_RMBUILD       = RpmBuildFlag(C.RPMBUILD_RMBUILD)       // remove build sub-tree
+	RPMBUILD_STRINGBUF     = RpmBuildFlag(C.RPMBUILD_STRINGBUF)     // internal use only
+	RPMBUILD_RMSPEC        = RpmBuildFlag(C.RPMBUILD_RMSPEC)        // remove spec file
+	RPMBUILD_FILE_FILE     = RpmBuildFlag(C.RPMBUILD_FILE_FILE)     // rpmSpecPkgGetSection: %files -f
+	RPMBUILD_FILE_LIST     = RpmBuildFlag(C.RPMBUILD_FILE_LIST)     // rpmSpecPkgGetSection: %files
+	RPMBUILD_POLICY        = RpmBuildFlag(C.RPMBUILD_POLICY)        // rpmSpecPkgGetSection: %policy
+	RPMBUILD_NOBUILD       = RpmBuildFlag(C.RPMBUILD_NOBUILD)       // don't execute or package
 )
 
 type Spec struct {
