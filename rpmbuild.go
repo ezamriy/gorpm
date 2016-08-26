@@ -21,7 +21,7 @@ const (
 	RPMBUILD_PREP          = RpmBuildFlag(C.RPMBUILD_PREP)          // execute %prep
 	RPMBUILD_BUILD         = RpmBuildFlag(C.RPMBUILD_BUILD)         // execute %build
 	RPMBUILD_INSTALL       = RpmBuildFlag(C.RPMBUILD_INSTALL)       // execute install
-	RPMBUILD_CHECK         = RpmBuildFlag(C.RRPMBUILD_CHECK)        // execute %check
+	RPMBUILD_CHECK         = RpmBuildFlag(C.RPMBUILD_CHECK)        // execute %check
 	RPMBUILD_CLEAN         = RpmBuildFlag(C.RPMBUILD_CLEAN)         // execute %clean
 	RPMBUILD_FILECHECK     = RpmBuildFlag(C.RPMBUILD_FILECHECK)     // check %files manifest
 	RPMBUILD_PACKAGESOURCE = RpmBuildFlag(C.RPMBUILD_PACKAGESOURCE) // create source package
